@@ -8,7 +8,11 @@
 /* Center the container in the middle of the browser */
 body {
   font-family: verdana, arial, helvetica;
-  font-size: 18pt;
+  font-size: 12pt;
+  a:link, a:visited, a:hover, a:active {
+      text-decoration: none;
+      color: black;
+  }
 
   margin: 0;
   display: flex;
@@ -43,15 +47,31 @@ body {
   opacity: 1;
 }
 
+.bottom-right-container {
+    /* Positions the element relative to the browser window (viewport) */
+    position: fixed;
+
+    right: 0;        /* Aligns the right edge to the right edge of the window */
+    bottom: 0;       /* Aligns the bottom edge to the bottom edge of the window */
+    background-color: white;
+    padding: 5px;
+    border: 0px solid black;
+    z-index: 1000;             /* Ensures the div is on top of other content */
+}
+
 </style>
 
 </head>
 
 <body>
 
-    <a href="/"><div class="image-container">
+    <div class="image-container">
     <img src="foop_eyes_surprise.gif" alt="<foop>" class="img-back">
     <img src="foop_eyes_surprise_hover.gif" alt="<spooky foop>" class="img-front">
+    </div>
+
+    <a href="/"><div class="bottom-right-container">
+        &lt;back&gt;
     </div></a>
 
 </body>
