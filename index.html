@@ -5,29 +5,53 @@
 <title>&lt;foop&gt;</title>
 
 <style type="text/css">
-BODY {  
+/* Center the container in the middle of the browser */
+body {
   font-family: verdana, arial, helvetica;
   font-size: 18pt;
-  background: white 
+
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+  min-height: 100vh;       /* Full viewport height */
+  background-color: white;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  border: 0px solid grey;
+.image-container {
+  position: relative;
+  width: 100px;  /* Adjust based on your image size */
+  height: 34px;
 }
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease; /* Smooth fade effect */
+}
+
+/* Hide the top image by default */
+.img-front {
+  opacity: 0;
+}
+
+/* Show the top image when hovering over the container */
+.image-container:hover .img-front {
+  opacity: 1;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<div class="center">
-<!-- &lt;foop&gt; -->
-<img src="foop_eyes_surprise.gif">
-<!-- img src="foop_eyes_mono.gif" -->
+<div class="image-container">
+    <img src="foop_eyes_surprise.gif" alt="<foop>" class="img-back">
+    <img src="foop_eyes_surprise_hover.gif" alt="<spooky foop>" class="img-front">
 </div>
 
 </body>
